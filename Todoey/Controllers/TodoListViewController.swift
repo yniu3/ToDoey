@@ -14,26 +14,34 @@ class TodoListViewController: UITableViewController {
     
     let defaults = UserDefaults.standard
     
+    //interface to file system using singleton (default) organized by using directory and domainMask(user home directory)
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist") //it's an array. Print the first one
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        let newItem = Item()
-        newItem.title = "Find Mike"
-        itemArray.append(newItem)
+        print(dataFilePath)
+
+//        //Theses are hardcoded items in the Array upon load
+//        let newItem = Item()
+//        newItem.title = "Find Mike"
+//        itemArray.append(newItem)
+//
+//        let newItem2 = Item()
+//        newItem2.title = "Buy Eggos"
+//        itemArray.append(newItem2)
+//
+//        let newItem3 = Item()
+//        newItem3.title = "Destory Demogorgon"
+//        itemArray.append(newItem3)
         
-        let newItem2 = Item()
-        newItem2.title = "Buy Eggos"
-        itemArray.append(newItem2)
+//        //Repulling array from our saved persistent array
+//        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
+//            itemArray = items
+//        }
         
-        let newItem3 = Item()
-        newItem3.title = "Destory Demogorgon"
-        itemArray.append(newItem3)
-        
-        //Repulling array from our saved persistent array
-        if let items = defaults.array(forKey: "TodoListArray") as? [Item] {
-            itemArray = items
-        }
+        loadItems()
     }
 
     //MARK - Tableview Datasource Methods
@@ -73,16 +81,10 @@ class TodoListViewController: UITableViewController {
 //            itemArray[indexPath.row].done = false
 //        }
         
-        tableView.reloadData()
+        savedItems()
+        
+        
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        
-        if tableView.cellForRow(at: indexPath)?.accessoryType == .checkmark {
-            tableView.cellForRow(at: indexPath)?.accessoryType = .none
-        }else {
-           tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-        }
-        
         
     }
     
@@ -100,10 +102,10 @@ class TodoListViewController: UITableViewController {
             
             self.itemArray.append(newItem)//text will never be nil because even an empty string is a string.
             
-            //This a sandbox that saves your ass when app gets terminated by user, OS, or updates
-            self.defaults.set(self.itemArray, forKey: "TodoListArray")
-            
-            self.tableView.reloadData()
+//            //This a sandbox that saves your ass when app gets terminated by user, OS, or updates
+//            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+
+            self.savedItems() //Encode custom items into plist
         }
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
@@ -114,5 +116,35 @@ class TodoListViewController: UITableViewController {
         
     }
     
+    //MARK - Model Manupulation Methods
+    
+    func savedItems() {
+        
+        let encoder = PropertyListEncoder()
+        
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print ("Error encoding item array, \(error)")
+        }
+        tableView.reloadData()
+    }
+    
+    func loadItems() {
+
+        if let data = try? Data(contentsOf: dataFilePath!) { //Optional binding
+            let decoder = PropertyListDecoder()
+            
+            do {
+                itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("Error decoding item array, \(error)")
+            }
+        }
+        
+    }
+    
 }
+
 
