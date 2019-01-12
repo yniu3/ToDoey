@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: SwipeTableViewController {
 
     var todoItems : Results<Item>?
     let realm = try! Realm()
@@ -19,6 +19,7 @@ class TodoListViewController: UITableViewController {
     var selectedCategory : Category? {
         didSet{
             loadItems()
+            tableView.rowHeight = 80
         }
     }
 
@@ -29,7 +30,7 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
     }
 
-    //MARK - Tableview Datasource Methods
+    //MARK: - Tableview Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todoItems?.count ?? 1//returns number of count in itemArray in tableview
@@ -37,7 +38,7 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDoItemCell", for: indexPath) //reuses 10 cells at a time
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) //reuses 10 cells at a time
         
         if let item = todoItems?[indexPath.row]{
             
@@ -46,7 +47,6 @@ class TodoListViewController: UITableViewController {
             //Ternary operator ==>
             // value = condition ? valueIfTure : valueIfFalse
             
-    //        cell.accessoryType = item.done == true ?  .checkmark : .none
             cell.accessoryType = item.done ? .checkmark : .none
         } else {
             cell.textLabel?.text = "No Items Added"
@@ -55,7 +55,7 @@ class TodoListViewController: UITableViewController {
         return cell
     }
     
-    //MARk - TableView Delegate Methodes
+    //MARK: - TableView Delegate Methodes
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        
@@ -75,7 +75,7 @@ class TodoListViewController: UITableViewController {
         
     }
     
-    //MARK - Add New Items
+    //MARK: - Add New Items
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var textField = UITextField()
@@ -108,7 +108,7 @@ class TodoListViewController: UITableViewController {
         
     }
     
-    //MARK - Model Manupulation Methods
+    //MARK: - Model Manupulation Methods
     
     
     func loadItems() {
@@ -116,6 +116,19 @@ class TodoListViewController: UITableViewController {
         todoItems = selectedCategory?.items.sorted(byKeyPath: "title", ascending: true)
         
         tableView.reloadData()
+    }
+    
+    //MARK: - Delete data from Swipe
+    override func updateModel(at indexPath: IndexPath) {
+        if let itemForDelection = self.todoItems?[indexPath.row]{
+            do {
+                try self.realm.write {
+                    realm.delete(itemForDelection)
+                }
+            } catch {
+                print ("Error deleting item \(error)")
+            }
+        }
     }
 }
 
