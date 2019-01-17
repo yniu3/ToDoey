@@ -17,6 +17,10 @@
 		3ABAE7AE21E8FF290045D519 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE7AD21E8FF290045D519 /* Category.swift */; };
 		3ABAE7B021EA8D780045D519 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE7AF21EA8D780045D519 /* SwipeTableViewController.swift */; };
 		3ACE86FF21E7E26400ED4DE8 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE86FE21E7E26400ED4DE8 /* CategoryViewController.swift */; };
+		3AE25DE221F05099000A9F9F /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE25DE121F05099000A9F9F /* WelcomeViewController.swift */; };
+		3AE25DE421F05786000A9F9F /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE25DE321F05786000A9F9F /* RegisterViewController.swift */; };
+		3AE25DE821F059E2000A9F9F /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE25DE721F059E2000A9F9F /* LogInViewController.swift */; };
+		3AE25DEA21F05A52000A9F9F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE25DE921F05A52000A9F9F /* ChatViewController.swift */; };
 		3AE75DF321F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE75DF221F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +36,10 @@
 		3ABAE7AD21E8FF290045D519 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3ABAE7AF21EA8D780045D519 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		3ACE86FE21E7E26400ED4DE8 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		3AE25DE121F05099000A9F9F /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		3AE25DE321F05786000A9F9F /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		3AE25DE721F059E2000A9F9F /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		3AE25DE921F05A52000A9F9F /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		3AE75DF221F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SurveyMonkeyiOSSDK.framework; path = "../../surveymonkey-ios-sdk-master/SurveyMonkeyiOSSDK.framework"; sourceTree = "<group>"; };
 		4BE816F1B180DDCB745947EE /* Pods_Todoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ECB849024BC9C638E7E2CB /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +105,10 @@
 				3ACE86FE21E7E26400ED4DE8 /* CategoryViewController.swift */,
 				3A39267221E446A50012EBF6 /* TodoListViewController.swift */,
 				3ABAE7AF21EA8D780045D519 /* SwipeTableViewController.swift */,
+				3AE25DE121F05099000A9F9F /* WelcomeViewController.swift */,
+				3AE25DE321F05786000A9F9F /* RegisterViewController.swift */,
+				3AE25DE721F059E2000A9F9F /* LogInViewController.swift */,
+				3AE25DE921F05A52000A9F9F /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -263,10 +275,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3ABAE7AC21E8FF1D0045D519 /* Item.swift in Sources */,
+				3AE25DE221F05099000A9F9F /* WelcomeViewController.swift in Sources */,
+				3AE25DE821F059E2000A9F9F /* LogInViewController.swift in Sources */,
 				3ACE86FF21E7E26400ED4DE8 /* CategoryViewController.swift in Sources */,
+				3AE25DE421F05786000A9F9F /* RegisterViewController.swift in Sources */,
 				3A39267321E446A50012EBF6 /* TodoListViewController.swift in Sources */,
 				3A39267121E446A50012EBF6 /* AppDelegate.swift in Sources */,
 				3ABAE7B021EA8D780045D519 /* SwipeTableViewController.swift in Sources */,
+				3AE25DEA21F05A52000A9F9F /* ChatViewController.swift in Sources */,
 				3ABAE7AE21E8FF290045D519 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
