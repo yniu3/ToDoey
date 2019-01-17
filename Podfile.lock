@@ -7,17 +7,20 @@ PODS:
   - Realm/Headers (3.13.1)
   - RealmSwift (3.13.1):
     - Realm (= 3.13.1)
+  - surveymonkey-ios-sdk (1.0.8)
   - SwipeCellKit (2.5.1)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`)
   - RealmSwift
+  - surveymonkey-ios-sdk (~> 1.0)
   - SwipeCellKit
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Realm
     - RealmSwift
+    - surveymonkey-ios-sdk
     - SwipeCellKit
 
 EXTERNAL SOURCES:
@@ -33,8 +36,9 @@ SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
+  surveymonkey-ios-sdk: c69335a71b370c8242a79ff9246d88f2f51101f3
   SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
 
-PODFILE CHECKSUM: 65bf4bce0f7646a0602a409389ed7a00b696cc2f
+PODFILE CHECKSUM: d9b1a3be692d9b65ef97192f553d57be4dd6c727
 
 COCOAPODS: 1.5.3

@@ -9,5 +9,6 @@ target 'Todoey' do
 pod 'RealmSwift'
 pod 'SwipeCellKit'
 pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git'
+pod 'surveymonkey-ios-sdk', '~> 1.0'
 
 end

@@ -17,6 +17,7 @@
 		3ABAE7AE21E8FF290045D519 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE7AD21E8FF290045D519 /* Category.swift */; };
 		3ABAE7B021EA8D780045D519 /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABAE7AF21EA8D780045D519 /* SwipeTableViewController.swift */; };
 		3ACE86FF21E7E26400ED4DE8 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ACE86FE21E7E26400ED4DE8 /* CategoryViewController.swift */; };
+		3AE75DF321F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AE75DF221F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		3ABAE7AD21E8FF290045D519 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		3ABAE7AF21EA8D780045D519 /* SwipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		3ACE86FE21E7E26400ED4DE8 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		3AE75DF221F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SurveyMonkeyiOSSDK.framework; path = "../../surveymonkey-ios-sdk-master/SurveyMonkeyiOSSDK.framework"; sourceTree = "<group>"; };
 		4BE816F1B180DDCB745947EE /* Pods_Todoey.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Todoey.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3ECB849024BC9C638E7E2CB /* Pods-Todoey.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.release.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.release.xcconfig"; sourceTree = "<group>"; };
 		D67DC91EE3A75BB7CB13344D /* Pods-Todoey.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Todoey.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Todoey/Pods-Todoey.debug.xcconfig"; sourceTree = "<group>"; };
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE75DF321F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework in Frameworks */,
 				1137C55131C4952503E8CBE9 /* Pods_Todoey.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,6 +130,7 @@
 		9C92C2F27092F523587ED47A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3AE75DF221F02F31009D2FC0 /* SurveyMonkeyiOSSDK.framework */,
 				4BE816F1B180DDCB745947EE /* Pods_Todoey.framework */,
 			);
 			name = Frameworks;
@@ -411,16 +415,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W5748EY79;
+				DEVELOPMENT_TEAM = X6D54H6G4V;
 				INFOPLIST_FILE = Todoey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.helenaniu.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GDIT.SoundOff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -430,16 +434,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2W5748EY79;
+				DEVELOPMENT_TEAM = X6D54H6G4V;
 				INFOPLIST_FILE = Todoey/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.helenaniu.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.GDIT.SoundOff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -25,7 +25,6 @@ class TodoListViewController: SwipeTableViewController {
             
         }
     }
-
     
     //interface to file system using singleton (default) organized by using directory and domainMask(user home directory)
     
@@ -48,8 +47,10 @@ class TodoListViewController: SwipeTableViewController {
     //This function writes the title to be perminately "1D9BF6" (blue)
     override func viewWillDisappear(_ animated: Bool) {
 
-        updateNavBar(withHexCode: "1D9BF6")
+        updateNavBar(withHexCode: "95B46A")
+        
     }
+    
     //MARK: Nav Bar Setup Methods
     
     func updateNavBar(withHexCode colorHexCode : String) {
@@ -59,6 +60,7 @@ class TodoListViewController: SwipeTableViewController {
        
         guard let navBarColor = UIColor(hexString: colorHexCode) else { fatalError() }
         
+//        navBar.barTintColor = navBarColor
         navBar.barTintColor = navBarColor
         
         navBar.tintColor = ContrastColorOf(navBarColor, returnFlat: true)

@@ -23,7 +23,7 @@ class CategoryViewController: SwipeTableViewController {
         super.viewDidLoad()
         
         loadCategories()
-        tableView.separatorStyle = .none
+//        tableView.separatorStyle = .none
     }
 
     //MARK: - TableView Datasource Methods
@@ -119,7 +119,7 @@ class CategoryViewController: SwipeTableViewController {
             
             let newCategory = Category()
             newCategory.name = textField.text!
-            newCategory.color = UIColor.randomFlat.hexValue()
+            newCategory.color = UIColor.flatForestGreen.hexValue()
             self.save(category: newCategory)
         }
         alert.addAction(action)
